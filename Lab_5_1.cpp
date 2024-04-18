@@ -1,5 +1,5 @@
 ﻿#include "Header.h"
-#include "Func.cpp"
+
 int main() {
 
 	SetConsoleCP(1251);
