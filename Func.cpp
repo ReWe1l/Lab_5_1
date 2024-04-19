@@ -1,7 +1,7 @@
 #include "Header.h"
 
 chel Func() {
-    chel e;
+    chel e;    
 
     cout << "Введите информацию о жителе" << endl;
 
@@ -9,7 +9,11 @@ chel Func() {
     cin >> e.secondname;
 
     cout << "Возраст: ";
-    cin >> e.age;
+    while (!(cin >> e.age)) {
+        cout << "Ошибка. Введите корректный возраст: ";
+        cin.clear();
+        cin.ignore(10000, '\n');
+    }
 
     cout << "Пол: ";
     cin >> e.gender;
@@ -44,7 +48,7 @@ void printchel(chel e[N]) {
     cout << endl;
 
     if (males > females) {
-        cout << "Жители мужского пола преобладают." << endl;
+        cout << "Жители мужского пола преобладают." << endl << endl;
         cout << "Информация о жителях мужского пола:" << endl;
         for (int i = 0; i < N; i++) {
             if (strcmp(e[i].gender, "мужской") == 0) {
